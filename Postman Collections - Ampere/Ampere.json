@@ -732,7 +732,7 @@
               "name": "00 - Client Cardentials",
               "item": [
                 {
-                  "name": "Get CDS client credencials",
+                  "name": "CDS client credencials",
                   "event": [
                     {
                       "listen": "test",
