@@ -737,14 +737,14 @@
                     {
                       "listen": "test",
                       "script": {
-                        "type": "text/javascript",
+                        "id": "0e0d371b-849a-4811-918d-b996df3a3964",
                         "exec": [
                           "var jsonData = JSON.parse(responseBody);",
                           "let bearer_token = \"Bearer \".concat(jsonData.access_token);",
                           "console.log(\"bearer_token = \" + bearer_token);",
                           "postman.setEnvironmentVariable(\"token\", bearer_token);"
                         ],
-                        "id": "0e0d371b-849a-4811-918d-b996df3a3964"
+                        "type": "text/javascript"
                       }
                     }
                   ],
