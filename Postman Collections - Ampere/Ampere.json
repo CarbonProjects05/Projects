@@ -730,68 +730,69 @@
             },
             {
               "name": "00 - Client Cardentials",
-              "item": [],
-              "id": "a02540b9-51c2-425d-807b-65c12f93877b"
-            },
-            {
-              "name": "Get CDS client credencials",
-              "event": [
+              "item": [
                 {
-                  "listen": "test",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "var jsonData = JSON.parse(responseBody);",
-                      "let bearer_token = \"Bearer \".concat(jsonData.access_token);",
-                      "console.log(\"bearer_token = \" + bearer_token);",
-                      "postman.setEnvironmentVariable(\"token\", bearer_token);"
+                  "name": "Get CDS client credencials",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "type": "text/javascript",
+                        "exec": [
+                          "var jsonData = JSON.parse(responseBody);",
+                          "let bearer_token = \"Bearer \".concat(jsonData.access_token);",
+                          "console.log(\"bearer_token = \" + bearer_token);",
+                          "postman.setEnvironmentVariable(\"token\", bearer_token);"
+                        ],
+                        "id": "0e0d371b-849a-4811-918d-b996df3a3964"
+                      }
+                    }
+                  ],
+                  "id": "58795b1b-6514-4345-9190-ab0b4d5f59a3",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/x-www-form-urlencoded"
+                      }
                     ],
-                    "id": "0e0d371b-849a-4811-918d-b996df3a3964"
-                  }
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "text"
+                        },
+                        {
+                          "key": "client_id",
+                          "value": "lithium-canonicaldataservice-clientcredentials",
+                          "type": "text"
+                        },
+                        {
+                          "key": "client_secret",
+                          "value": "ZBZsWGbvF2oXNbmaPkvhs2ZwsAweVlivjgOyuWneg1E4ZbfDvdrDpeCdS4q2TGmSz00OCTX0UFRliNKCSMGEiA22",
+                          "type": "text"
+                        },
+                        {
+                          "key": "scope",
+                          "value": "lithium-canonicaldataservice",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    "url": "https://stg-identity.primaverabss.com/connect/token"
+                  },
+                  "response": []
                 }
               ],
-              "id": "58795b1b-6514-4345-9190-ab0b4d5f59a3",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "name": "Content-Type",
-                    "type": "text",
-                    "value": "application/x-www-form-urlencoded"
-                  }
-                ],
-                "body": {
-                  "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "grant_type",
-                      "value": "client_credentials",
-                      "type": "text"
-                    },
-                    {
-                      "key": "client_id",
-                      "value": "lithium-canonicaldataservice-clientcredentials",
-                      "type": "text"
-                    },
-                    {
-                      "key": "client_secret",
-                      "value": "ZBZsWGbvF2oXNbmaPkvhs2ZwsAweVlivjgOyuWneg1E4ZbfDvdrDpeCdS4q2TGmSz00OCTX0UFRliNKCSMGEiA22",
-                      "type": "text"
-                    },
-                    {
-                      "key": "scope",
-                      "value": "lithium-canonicaldataservice",
-                      "type": "text"
-                    }
-                  ]
-                },
-                "url": "https://stg-identity.primaverabss.com/connect/token"
-              },
-              "response": []
+              "id": "a02540b9-51c2-425d-807b-65c12f93877b"
             }
           ],
           "id": "6d264218-d050-4b1f-bc96-aca3cae26c17"
